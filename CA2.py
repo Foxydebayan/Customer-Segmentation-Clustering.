@@ -19,10 +19,8 @@ X_scaled = scaler.fit_transform(X)
 # PCA
 pca = PCA(n_components=2)
 X_pca = pca.fit_transform(X_scaled)
-
-# ================================
-# 1️⃣ Elbow Method
-# ================================
+
+# Elbow Method
 wcss = []
 K = range(2, 11)
 for k in K:
@@ -37,9 +35,8 @@ plt.xlabel("Number of Clusters (k)")
 plt.ylabel("WCSS")
 plt.show()
 
-# ================================
-# 2️⃣ Silhouette Score
-# ================================
+
+# Silhouette Score
 sil_scores = []
 for k in K:
     km = KMeans(n_clusters=k, random_state=42)
@@ -58,9 +55,8 @@ optimal_k = 5
 kmeans = KMeans(n_clusters=optimal_k, random_state=42)
 k_labels = kmeans.fit_predict(X_pca)
 
-# ================================
-# 3️⃣ K-Means Cluster Plot
-# ================================
+
+# K-Means Cluster Plot
 plt.figure()
 plt.scatter(X_pca[:, 0], X_pca[:, 1], c=k_labels, cmap='viridis')
 plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], 
@@ -70,10 +66,8 @@ plt.xlabel("PCA Component 1")
 plt.ylabel("PCA Component 2")
 plt.legend()
 plt.show()
-
-# ================================
-# 4️⃣ DBSCAN (Outlier Detection)
-# ================================
+
+# DBSCAN 
 dbscan = DBSCAN(eps=0.6, min_samples=5)
 db_labels = dbscan.fit_predict(X_pca)
 
@@ -84,18 +78,15 @@ plt.xlabel("PCA Component 1")
 plt.ylabel("PCA Component 2")
 plt.show()
 
-# ================================
-# 5️⃣ Distance Metric Comparison
-# ================================
+
+# Distance Metric Comparisom
 euclid_mean = np.mean(euclidean_distances(X_pca))
 manhat_mean = np.mean(manhattan_distances(X_pca))
 
 print("Average Euclidean Distance:", euclid_mean)
 print("Average Manhattan Distance:", manhat_mean)
-
-# ================================
-# 6️⃣ Dendrogram
-# ================================
+
+# Dendrogram
 linked = linkage(X_pca, method='ward')
 
 plt.figure(figsize=(10, 5))
