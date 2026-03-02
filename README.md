@@ -3,13 +3,13 @@
 **Roll No:** 10200123015  
 
 ## Project Overview
-[cite_start]This project addresses the challenge of identifying hidden patterns in high-dimensional retail datasets without prior knowledge[cite: 3]. [cite_start]The objective is to efficiently maximize intra-class similarity and minimize inter-class similarity to gain valuable business insights[cite: 4].
+This project addresses the challenge of identifying hidden patterns in high-dimensional retail datasets without prior knowledge.The objective is to efficiently maximize intra-class similarity and minimize inter-class similarity to gain valuable business insights.
 
 ## Key Contributions
-* [cite_start]**Optimal Cluster Selection:** Applied the **Elbow Method** and **Silhouette Analysis** to remove subjectivity in choosing the number of clusters[cite: 7].
-* [cite_start]**Robustness to Outliers:** Implemented **DBSCAN** to effectively differentiate between actual data points and noise[cite: 8].
-* [cite_start]**Performance Benchmarking:** Utilized different metrics, including **Manhattan and Euclidean distances**, to compare clustering accuracy[cite: 9].
-* [cite_start]**Visualization:** Developed **Dendrograms** to make complex mathematical structures easier to understand for better decision-making[cite: 10].
+**Optimal Cluster Selection:** Applied the **Elbow Method** and **Silhouette Analysis** to remove subjectivity in choosing the number of clusters
+**Robustness to Outliers:** Implemented **DBSCAN** to effectively differentiate between actual data points and noise
+**Performance Benchmarking:** Utilized different metrics, including **Manhattan and Euclidean distances**, to compare clustering accuracy
+**Visualization:** Developed **Dendrograms** to make complex mathematical structures easier to understand for better decision-making
 
 ## Execution Results
 * **Average Euclidean Distance:** 2.088
